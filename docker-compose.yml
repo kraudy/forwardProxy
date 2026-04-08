@@ -1,0 +1,24 @@
+services:
+  squid:
+    image: ubuntu/squid:latest
+
+    build:
+      context: .                    # ← root of repo
+      dockerfile: Dockerfile        # ← our new multi-stage one
+
+    container_name: squid-proxy
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./squid.conf:/etc/squid/squid.conf:ro
+      - squid_cache:/var/spool/squid
+      - squid_logs:/var/log/squid
+
+    environment:
+      TZ: America/Managua
+
+    restart: unless-stopped
+
+volumes:
+  squid_cache:
+  squid_logs:
