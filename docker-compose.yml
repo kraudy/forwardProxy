@@ -8,9 +8,10 @@ services:
 
     container_name: squid-proxy
     ports:
-      - "192.168.0.181:3128:3128"   # ← INTERNAL NIC IP:host-port:container-port
+      - "192.168.0.181:3128:3128"   # ← listens ONLY on your internal NIC (physical separation)
     volumes:
       - ./squid.conf:/etc/squid/squid.conf:ro
+      - ./whitelist.txt:/etc/squid/whitelist.txt:ro
       - squid_cache:/var/spool/squid
       - squid_logs:/var/log/squid
 
