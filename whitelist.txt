@@ -1,23 +1,18 @@
-
 # === Work + Google + Firefox full functionality ===
 .google.com
-.gstatic.com          # Google Images, fonts, etc.
-.googleapis.com      # Many Google services
-
-# Firefox required domains
+.gstatic.com
+.googleapis.com
+.googleusercontent.com 
+.mozgcp.net
 .mozilla.com
 .mozilla.net
 .mozilla.org
 .firefox.com
-.mozgcp.net
-
-# Fastly OHTTP gateway (the one currently being blocked)
+.fastly.com
 .fastly-edge.com
-.fastly.com           # just in case other Fastly edges appear
 
-# .gstatic.com
-# .googleapis.com
-# .microsoft.com       # Office 365, etc.
+# Optional work domains (uncomment when needed)
+# .microsoft.com
 # .office.com
-# yourcompany.com      # your internal sites
-# .workdomain.com
+# .yourcompany.com
+# .atlassian.com
