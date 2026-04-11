@@ -17,21 +17,38 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 # 3. Add the Docker repository
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-"
 
 # 4. Update apt again and install Docker + Compose plugin
 sudo apt update
+sudo apt upgrade
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # 5 Start and enable Docker
 sudo systemctl enable --now docker
+sudo systemctl status docker
 
 # Add user to the docker group (so you don't need sudo every time): 
 sudo usermod -aG docker $USER
+
+# =====
+# Set timezone
+# 1. Check current timezone and NTP status
+timedatectl
+
+# 2. Confirm the exact timezone name exists
+timedatectl list-timezones | grep -i managua
+# (should return America/Managua)
+
+# 3. Set it
+sudo timedatectl set-timezone America/Managua
+
+# 4. Verify
+timedatectl
 ```
 
 ## Build it dud
