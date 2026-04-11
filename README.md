@@ -73,7 +73,7 @@ docker compose up -d --build
 ## Test it u wacko
 
 ```bash
-curl -x http://localhost:3128 https://www.google.com
+curl -x http://192.168.0.181:3128 https://www.google.com
 ```
 
 ## Set up services like you know stuff
