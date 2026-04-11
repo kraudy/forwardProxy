@@ -1,5 +1,13 @@
 
+
 .google.com          # Google search + Images
+
+# .gstatic.com
+# .googleapis.com
+# .microsoft.com       # Office 365, etc.
+# .office.com
+# yourcompany.com      # your internal sites
+# .workdomain.com
 
 # .gstatic.com
 # .googleapis.com

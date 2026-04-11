@@ -73,6 +73,15 @@ docker compose up -d --build
 ## Test it u wacko
 
 ```bash
+# 1. Confirm the port is actually listening on the correct IP
+sudo ss -ltnp | grep 3128
+
+# 2. Check firewall status
+sudo ufw status verbose
+
+# 3. Test the proxy FROM the Ubuntu server itself (this must work first)
+curl -x http://192.168.0.181:3128 -I https://www.google.com
+
 curl -x http://192.168.0.181:3128 https://www.google.com
 ```
 
