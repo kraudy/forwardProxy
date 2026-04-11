@@ -1,14 +1,19 @@
 
-# === Work + Google + Firefox basic functionality ===
+# === Work + Google + Firefox full functionality ===
 .google.com
-.gstatic.com          # required for Google Images, maps, etc.
-.googleapis.com      # required for many Google services
+.gstatic.com          # Google Images, fonts, etc.
+.googleapis.com      # Many Google services
 
+# Firefox required domains
 .mozilla.com
 .mozilla.net
 .mozilla.org
-.firefox.com         # covers detectportal.firefox.com
-.mozgcp.net          # covers ohttp-gateway / webservices.mozgcp.net
+.firefox.com
+.mozgcp.net
+
+# Fastly OHTTP gateway (the one currently being blocked)
+.fastly-edge.com
+.fastly.com           # just in case other Fastly edges appear
 
 # .gstatic.com
 # .googleapis.com
