@@ -1,13 +1,14 @@
 
+# === Work + Google + Firefox basic functionality ===
+.google.com
+.gstatic.com          # required for Google Images, maps, etc.
+.googleapis.com      # required for many Google services
 
-.google.com          # Google search + Images
-
-# .gstatic.com
-# .googleapis.com
-# .microsoft.com       # Office 365, etc.
-# .office.com
-# yourcompany.com      # your internal sites
-# .workdomain.com
+.mozilla.com
+.mozilla.net
+.mozilla.org
+.firefox.com         # covers detectportal.firefox.com
+.mozgcp.net          # covers ohttp-gateway / webservices.mozgcp.net
 
 # .gstatic.com
 # .googleapis.com
