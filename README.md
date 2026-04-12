@@ -93,15 +93,26 @@ sudo vim /etc/systemd/system/squid-proxy.service
 [Unit]
 Description=Squid Proxy (Docker Compose)
 Requires=docker.service
-After=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+DefaultDependencies=no
+Conflicts=shutdown.target
+Before=shutdown.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-WorkingDirectory=/opt/squid-proxy
-ExecStart=/usr/bin/docker compose up -d
-ExecStop=/usr/bin/docker compose down
-TimeoutStartSec=0
+WorkingDirectory=/home/kraudy/forwardProxy
+
+ExecStart=/usr/bin/docker compose up -d --build
+ExecStop=/usr/bin/docker compose down --timeout 60
+
+TimeoutStartSec=300
+TimeoutStopSec=180  
+
+Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
