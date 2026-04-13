@@ -2,7 +2,7 @@
 .google.com
 .gstatic.com
 .googleapis.com
-.googleusercontent.com 
+.googleusercontent.com
 .mozgcp.net
 .mozilla.com
 .mozilla.net
@@ -10,6 +10,12 @@
 .firefox.com
 .fastly.com
 .fastly-edge.com
+.trello.com
+.atlassian.com
+.atl-paas.net
+.amazonaws.com
+.sentry.io
+.cloudfront.net
 
 # Optional work domains (uncomment when needed)
 # .microsoft.com
