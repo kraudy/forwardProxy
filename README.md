@@ -120,6 +120,9 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable --now squid-proxy.service
 
+sudo journalctl -u squid-proxy.service
+sudo journalctl -u squid-proxy.service -f
+
 ```
 
 ## extra

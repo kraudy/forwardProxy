@@ -16,6 +16,10 @@
 .amazonaws.com
 .sentry.io
 .cloudfront.net
+.photoroom.com/es
+.photoroom.com
+.pinterest.com
+.pinimg.com
 
 # Optional work domains (uncomment when needed)
 # .microsoft.com
