@@ -123,6 +123,49 @@ sudo systemctl enable --now squid-proxy.service
 sudo journalctl -u squid-proxy.service
 sudo journalctl -u squid-proxy.service -f
 
+TODO: Add a cleaning service for the logs dud
+
+
+
+```
+
+## disk error
+
+```bash
+
+top
+
+lsblk -f 
+
+df -h
+
+sudo dmesg
+
+# Wath kernel journal
+journalctl -k
+
+# Verify entries are fine
+sudo journalctl --verify
+
+
+sudo systemctl restart systemd-journald
+
+
+# errors since last boot 
+journalctl -b -p err
+
+
+# Fix poweroff button
+# This only affects short button press so hard reset can still be forced
+sudo vim /etc/systemd/logind.conf
+
+[Login]
+HandlePowerKey=poweroff
+PowerKeyIgnoreInhibited=yes
+
+sudo systemctl restart systemd-logind
+
+
 ```
 
 ## extra
